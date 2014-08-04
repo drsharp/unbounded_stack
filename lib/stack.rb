@@ -1,6 +1,8 @@
 class Stack
   def initialize
     @element = nil
+    @prev_element = nil
+    @prev_prev_element = nil
   end
 
   def IsEmpty
@@ -8,12 +10,16 @@ class Stack
   end
 
   def Push(element)
+    @prev_prev_element = @prev_element
+    @prev_element = @element
     @element = element
   end
 
   def Pop
     top = @element
-    @element = nil
+    @element = @prev_element
+    @prev_element = @prev_prev_element
+    @prev_prev_element = nil
     top
   end
 
