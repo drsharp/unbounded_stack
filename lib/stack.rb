@@ -3,6 +3,10 @@ class Stack
     @elements = []
   end
 
+  def empty?
+    self.IsEmpty
+  end
+
   def IsEmpty
     @elements.empty?
   end
