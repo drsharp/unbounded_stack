@@ -18,4 +18,11 @@ describe "Stack" do
     expect(stack.IsEmpty).to be(true)
   end
 
+  it "Push a single object, remembering what it is; Pop the object, and verify that the two objects are equal." do
+    expected = 1234
+    stack.Push(expected)
+    actual = stack.Pop
+    expect(actual).to eq(expected)
+  end
+
 end
