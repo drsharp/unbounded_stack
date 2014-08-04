@@ -8,12 +8,15 @@ class Stack
   end
 
   def Push(element)
+    @element = element
     @is_empty = false
   end
 
   def Pop
     @is_empty = true
-    return nil
+    top = @element
+    @element = nil
+    top
   end
 
 end
