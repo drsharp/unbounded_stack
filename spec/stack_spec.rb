@@ -14,14 +14,14 @@ describe "Stack" do
 
   it "Push a single object, Pop the object, and verify that IsEmpty is true." do
     stack.push("first element")
-    stack.Pop
+    stack.pop
     expect(stack.IsEmpty).to be(true)
   end
 
   it "Push a single object, remembering what it is; Pop the object, and verify that the two objects are equal." do
     expected = 1234
     stack.push(expected)
-    actual = stack.Pop
+    actual = stack.pop
     expect(actual).to eq(expected)
   end
 
@@ -33,16 +33,16 @@ describe "Stack" do
     pushed3 = "3"
     stack.push(pushed3)
 
-    popped = stack.Pop
+    popped = stack.pop
     expect(popped).to eq(pushed3)
-    popped = stack.Pop
+    popped = stack.pop
     expect(popped).to eq(pushed2)
-    popped = stack.Pop
+    popped = stack.pop
     expect(popped).to eq(pushed1)
   end
 
   it "Pop a Stack that has no elements." do
-    expect{stack.Pop}.to raise_error
+    expect{stack.pop}.to raise_error
   end
 
   it "Push a single object and then call Top. Verify that IsEmpty is false." do
@@ -90,7 +90,7 @@ describe "Stack" do
 
   it "Push null onto the Stack, Pop the Stack, and verify that the value returned is null." do
     stack.push(nil)
-    expect(stack.Pop).to be(nil)
+    expect(stack.pop).to be(nil)
     expect(stack.IsEmpty).to be(true)
   end
 
