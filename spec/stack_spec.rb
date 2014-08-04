@@ -88,4 +88,10 @@ describe "Stack" do
     expect(stack.IsEmpty).to be(false)
   end
 
+  it "Push null onto the Stack, Pop the Stack, and verify that the value returned is null." do
+    stack.Push(nil)
+    expect(stack.Pop).to be(nil)
+    expect(stack.IsEmpty).to be(true)
+  end
+
 end
