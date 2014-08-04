@@ -4,7 +4,7 @@ class Stack
   end
 
   def empty?
-    self.IsEmpty
+    @elements.empty?
   end
 
   def IsEmpty
