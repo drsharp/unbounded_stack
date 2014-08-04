@@ -12,9 +12,9 @@ class Stack
   end
 
   def Pop
-    top = self.Top
+    top_element = top
     @elements = @elements[0..-2]
-    top
+    top_element
   end
 
   def top
