@@ -21,24 +21,16 @@ describe "Stack" do
   it "Push a single object, remembering what it is; Pop the object, and verify that the two objects are equal." do
     expected = 1234
     stack.push(expected)
-    actual = stack.pop
-    expect(actual).to eq(expected)
+    expect(stack.pop).to eq(expected)
   end
 
   it "Push three objects, remembering what they are; Pop each one, and verify that they are correct." do
-    pushed1 = "1"
-    stack.push(pushed1)
-    pushed2 = "2"
-    stack.push(pushed2)
-    pushed3 = "3"
-    stack.push(pushed3)
-
-    popped = stack.pop
-    expect(popped).to eq(pushed3)
-    popped = stack.pop
-    expect(popped).to eq(pushed2)
-    popped = stack.pop
-    expect(popped).to eq(pushed1)
+    stack.push(pushed1 = "1")
+    stack.push(pushed2 = "2")
+    stack.push(pushed3 = "3")
+    expect(stack.pop).to eq(pushed3)
+    expect(stack.pop).to eq(pushed2)
+    expect(stack.pop).to eq(pushed1)
   end
 
   it "Pop a Stack that has no elements." do
@@ -52,31 +44,21 @@ describe "Stack" do
   end
 
   it "Push a single object, remembering what it is; and then call Top. Verify that the object that is returned is the same as the one that was pushed." do
-    pushed = "42"
-    stack.push(pushed)
-    topped = stack.top
-    expect(topped).to eq(pushed)
+    stack.push(pushed = "42")
+    expect(stack.top).to eq(pushed)
   end
 
   it "Push multiple items onto the Stack and verify that calling Top returns the correct object." do
-    pushed3 = "3"
-    stack.push(pushed3)
-    pushed4 = "4"
-    stack.push(pushed4)
-    pushed5 = "5"
-    stack.push(pushed5)
-
-    topped = stack.top
-    expect(topped).to eq(pushed5)
+    stack.push(pushed3 = "3")
+    stack.push(pushed4 = "4")
+    stack.push(pushed5 = "5")
+    expect(stack.top).to eq(pushed5)
   end
 
   it "Push an item on the Stack, call Top repeatedly, and verify that the object returned each time is equal to the object that was pushed onto the Stack." do
     pushed = "44"
-    stack.push(pushed)
-    10.times do
-      topped = stack.top
-      expect(topped).to eq(pushed)
-    end
+    stack.push(pushed = "44")
+    10.times { expect(stack.top).to eq(pushed) }
   end
 
   it "Call Top on a Stack with no elements." do
