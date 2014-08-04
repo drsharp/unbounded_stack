@@ -11,6 +11,10 @@ class Stack
     @elements << element
   end
 
+  def pop
+    self.Pop
+  end
+
   def Pop
     top_element = top
     @elements = @elements[0..-2]
