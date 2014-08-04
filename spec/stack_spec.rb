@@ -12,4 +12,10 @@ describe "Stack" do
     expect(stack.IsEmpty).to be(false)
   end
 
+  it "Push a single object, Pop the object, and verify that IsEmpty is true." do
+    stack.Push("first element")
+    stack.Pop
+    expect(stack.IsEmpty).to be(true)
+  end
+
 end
