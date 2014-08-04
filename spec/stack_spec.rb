@@ -58,4 +58,16 @@ describe "Stack" do
     expect(topped).to eq(pushed)
   end
 
+  it "Push multiple items onto the Stack and verify that calling Top returns the correct object." do
+    pushed3 = "3"
+    stack.Push(pushed3)
+    pushed4 = "4"
+    stack.Push(pushed4)
+    pushed5 = "5"
+    stack.Push(pushed5)
+
+    topped = stack.Top
+    expect(topped).to eq(pushed5)
+  end
+
 end
