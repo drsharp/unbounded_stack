@@ -8,30 +8,30 @@ describe "Stack" do
   end
 
   it "Pushes a single object on the Stack and verifies that IsEmpty is false" do
-    stack.Push("first element")
+    stack.push("first element")
     expect(stack.IsEmpty).to be(false)
   end
 
   it "Push a single object, Pop the object, and verify that IsEmpty is true." do
-    stack.Push("first element")
+    stack.push("first element")
     stack.Pop
     expect(stack.IsEmpty).to be(true)
   end
 
   it "Push a single object, remembering what it is; Pop the object, and verify that the two objects are equal." do
     expected = 1234
-    stack.Push(expected)
+    stack.push(expected)
     actual = stack.Pop
     expect(actual).to eq(expected)
   end
 
   it "Push three objects, remembering what they are; Pop each one, and verify that they are correct." do
     pushed1 = "1"
-    stack.Push(pushed1)
+    stack.push(pushed1)
     pushed2 = "2"
-    stack.Push(pushed2)
+    stack.push(pushed2)
     pushed3 = "3"
-    stack.Push(pushed3)
+    stack.push(pushed3)
 
     popped = stack.Pop
     expect(popped).to eq(pushed3)
@@ -46,25 +46,25 @@ describe "Stack" do
   end
 
   it "Push a single object and then call Top. Verify that IsEmpty is false." do
-    stack.Push("42")
+    stack.push("42")
     stack.Top
     expect(stack.IsEmpty).to be(false)
   end
 
   it "Push a single object, remembering what it is; and then call Top. Verify that the object that is returned is the same as the one that was pushed." do
     pushed = "42"
-    stack.Push(pushed)
+    stack.push(pushed)
     topped = stack.Top
     expect(topped).to eq(pushed)
   end
 
   it "Push multiple items onto the Stack and verify that calling Top returns the correct object." do
     pushed3 = "3"
-    stack.Push(pushed3)
+    stack.push(pushed3)
     pushed4 = "4"
-    stack.Push(pushed4)
+    stack.push(pushed4)
     pushed5 = "5"
-    stack.Push(pushed5)
+    stack.push(pushed5)
 
     topped = stack.Top
     expect(topped).to eq(pushed5)
@@ -72,7 +72,7 @@ describe "Stack" do
 
   it "Push an item on the Stack, call Top repeatedly, and verify that the object returned each time is equal to the object that was pushed onto the Stack." do
     pushed = "44"
-    stack.Push(pushed)
+    stack.push(pushed)
     10.times do
       topped = stack.Top
       expect(topped).to eq(pushed)
@@ -84,18 +84,18 @@ describe "Stack" do
   end
 
   it "Push null onto the Stack and verify that IsEmpty returns false." do
-    stack.Push(nil)
+    stack.push(nil)
     expect(stack.IsEmpty).to be(false)
   end
 
   it "Push null onto the Stack, Pop the Stack, and verify that the value returned is null." do
-    stack.Push(nil)
+    stack.push(nil)
     expect(stack.Pop).to be(nil)
     expect(stack.IsEmpty).to be(true)
   end
 
   it "Push null onto the Stack, call Top, and verify that the value returned is null." do
-    stack.Push(nil)
+    stack.push(nil)
     expect(stack.Top).to be(nil)
     expect(stack.IsEmpty).to be(false)
   end
