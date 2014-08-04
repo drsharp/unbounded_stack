@@ -1,3 +1,5 @@
+require 'stack'
+
 describe "Stack" do
 
   it "creates a Stack and verifies that IsEmpty is true." do
