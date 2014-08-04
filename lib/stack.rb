@@ -11,4 +11,8 @@ class Stack
     @is_empty = false
   end
 
+  def Pop
+    
+  end
+
 end
