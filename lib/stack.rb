@@ -8,7 +8,7 @@ class Stack
   end
 
   def Push(element)
-    
+    @is_empty = false
   end
 
 end
