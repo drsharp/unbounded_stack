@@ -8,7 +8,7 @@ class Stack
   end
 
   def push(element)
-    Push(element)
+    @elements << element
   end
 
   def Push(element)
