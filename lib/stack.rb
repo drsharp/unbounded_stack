@@ -18,4 +18,8 @@ class Stack
     top
   end
 
+  def Top
+    
+  end
+
 end
