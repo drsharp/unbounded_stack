@@ -12,7 +12,7 @@ class Stack
   end
 
   def Pop
-    
+    @is_empty = true
   end
 
 end
