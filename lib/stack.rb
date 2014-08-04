@@ -19,6 +19,7 @@ class Stack
   end
 
   def Top
+    raise "Cannot Top an empty Stack" if self.IsEmpty
     @elements.last
   end
 
