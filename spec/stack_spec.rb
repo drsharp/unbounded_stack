@@ -45,4 +45,10 @@ describe "Stack" do
     expect{stack.Pop}.to raise_error
   end
 
+  it "Push a single object and then call Top. Verify that IsEmpty is false." do
+    stack.Push("42")
+    stack.Top
+    expect(stack.IsEmpty).to be(false)
+  end
+
 end
