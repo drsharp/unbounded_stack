@@ -79,4 +79,8 @@ describe "Stack" do
     end
   end
 
+  it "Call Top on a Stack with no elements." do
+    expect{stack.Top}.to raise_error
+  end
+
 end
