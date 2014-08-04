@@ -25,4 +25,20 @@ describe "Stack" do
     expect(actual).to eq(expected)
   end
 
+  it "Push three objects, remembering what they are; Pop each one, and verify that they are correct." do
+    pushed1 = "1"
+    stack.Push(pushed1)
+    pushed2 = "2"
+    stack.Push(pushed2)
+    pushed3 = "3"
+    stack.Push(pushed3)
+
+    popped = stack.Pop
+    expect(popped).to eq(pushed3)
+    popped = stack.Pop
+    expect(popped).to eq(pushed2)
+    popped = stack.Pop
+    expect(popped).to eq(pushed1)
+  end  
+
 end
