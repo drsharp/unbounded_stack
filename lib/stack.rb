@@ -19,7 +19,7 @@ class Stack
   end
 
   def Top
-    @elements[-1]
+    @elements.last
   end
 
 end
