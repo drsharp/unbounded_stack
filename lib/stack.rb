@@ -1,7 +1,10 @@
 class Stack
+  def initialize
+    @is_empty = true
+  end
 
   def IsEmpty
-    true
+    @is_empty
   end
 
 end
