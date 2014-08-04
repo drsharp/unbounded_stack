@@ -8,13 +8,12 @@ class Stack
   end
 
   def push(element)
-    @elements << element
+    @elements.push(element)
   end
 
   def pop
-    top_element = top
-    @elements = @elements[0..-2]
-    top_element
+    raise "Cannot Pop an empty Stack" if empty?
+    @elements.pop
   end
 
   def top
