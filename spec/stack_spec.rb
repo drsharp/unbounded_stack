@@ -39,6 +39,10 @@ describe "Stack" do
     expect(popped).to eq(pushed2)
     popped = stack.Pop
     expect(popped).to eq(pushed1)
-  end  
+  end
+
+  it "Pop a Stack that has no elements." do
+    expect{stack.Pop}.to raise_error
+  end
 
 end
