@@ -7,4 +7,8 @@ class Stack
     @is_empty
   end
 
+  def Push
+    
+  end
+
 end
