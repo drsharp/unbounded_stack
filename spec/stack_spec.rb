@@ -51,4 +51,11 @@ describe "Stack" do
     expect(stack.IsEmpty).to be(false)
   end
 
+  it "Push a single object, remembering what it is; and then call Top. Verify that the object that is returned is the same as the one that was pushed." do
+    pushed = "42"
+    stack.Push(pushed)
+    topped = stack.Top
+    expect(topped).to eq(pushed)
+  end
+
 end
