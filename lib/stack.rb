@@ -7,6 +7,10 @@ class Stack
     @elements.empty?
   end
 
+  def push(element)
+    Push(element)
+  end
+
   def Push(element)
     @elements << element
   end
