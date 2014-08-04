@@ -47,14 +47,14 @@ describe "Stack" do
 
   it "Push a single object and then call Top. Verify that IsEmpty is false." do
     stack.push("42")
-    stack.Top
+    stack.top
     expect(stack.IsEmpty).to be(false)
   end
 
   it "Push a single object, remembering what it is; and then call Top. Verify that the object that is returned is the same as the one that was pushed." do
     pushed = "42"
     stack.push(pushed)
-    topped = stack.Top
+    topped = stack.top
     expect(topped).to eq(pushed)
   end
 
@@ -66,7 +66,7 @@ describe "Stack" do
     pushed5 = "5"
     stack.push(pushed5)
 
-    topped = stack.Top
+    topped = stack.top
     expect(topped).to eq(pushed5)
   end
 
@@ -74,13 +74,13 @@ describe "Stack" do
     pushed = "44"
     stack.push(pushed)
     10.times do
-      topped = stack.Top
+      topped = stack.top
       expect(topped).to eq(pushed)
     end
   end
 
   it "Call Top on a Stack with no elements." do
-    expect{stack.Top}.to raise_error
+    expect{stack.top}.to raise_error
   end
 
   it "Push null onto the Stack and verify that IsEmpty returns false." do
@@ -96,7 +96,7 @@ describe "Stack" do
 
   it "Push null onto the Stack, call Top, and verify that the value returned is null." do
     stack.push(nil)
-    expect(stack.Top).to be(nil)
+    expect(stack.top).to be(nil)
     expect(stack.IsEmpty).to be(false)
   end
 
