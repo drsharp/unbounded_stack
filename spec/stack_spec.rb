@@ -70,4 +70,13 @@ describe "Stack" do
     expect(topped).to eq(pushed5)
   end
 
+  it "Push an item on the Stack, call Top repeatedly, and verify that the object returned each time is equal to the object that was pushed onto the Stack." do
+    pushed = "44"
+    stack.Push(pushed)
+    10.times do
+      topped = stack.Top
+      expect(topped).to eq(pushed)
+    end
+  end
+
 end
