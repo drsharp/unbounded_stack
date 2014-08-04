@@ -12,8 +12,7 @@ class Stack
   end
 
   def Pop
-    raise "Cannot Pop an empty Stack" if self.IsEmpty
-    top = @elements[-1]
+    top = self.Top
     @elements = @elements[0..-2]
     top
   end
