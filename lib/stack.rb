@@ -13,6 +13,7 @@ class Stack
 
   def Pop
     @is_empty = true
+    return nil
   end
 
 end
