@@ -83,4 +83,9 @@ describe "Stack" do
     expect{stack.Top}.to raise_error
   end
 
+  it "Push null onto the Stack and verify that IsEmpty returns false." do
+    stack.Push(nil)
+    expect(stack.IsEmpty).to be(false)
+  end
+
 end
