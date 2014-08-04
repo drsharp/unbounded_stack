@@ -4,18 +4,18 @@ describe "Stack" do
   let(:stack) { Stack.new }
 
   it "creates a Stack and verifies that IsEmpty is true." do
-    expect(stack.IsEmpty).to be(true)
+    expect(stack.empty?).to be(true)
   end
 
   it "Pushes a single object on the Stack and verifies that IsEmpty is false" do
     stack.push("first element")
-    expect(stack.IsEmpty).to be(false)
+    expect(stack.empty?).to be(false)
   end
 
   it "Push a single object, Pop the object, and verify that IsEmpty is true." do
     stack.push("first element")
     stack.pop
-    expect(stack.IsEmpty).to be(true)
+    expect(stack.empty?).to be(true)
   end
 
   it "Push a single object, remembering what it is; Pop the object, and verify that the two objects are equal." do
@@ -48,7 +48,7 @@ describe "Stack" do
   it "Push a single object and then call Top. Verify that IsEmpty is false." do
     stack.push("42")
     stack.top
-    expect(stack.IsEmpty).to be(false)
+    expect(stack.empty?).to be(false)
   end
 
   it "Push a single object, remembering what it is; and then call Top. Verify that the object that is returned is the same as the one that was pushed." do
@@ -85,19 +85,19 @@ describe "Stack" do
 
   it "Push null onto the Stack and verify that IsEmpty returns false." do
     stack.push(nil)
-    expect(stack.IsEmpty).to be(false)
+    expect(stack.empty?).to be(false)
   end
 
   it "Push null onto the Stack, Pop the Stack, and verify that the value returned is null." do
     stack.push(nil)
     expect(stack.pop).to be(nil)
-    expect(stack.IsEmpty).to be(true)
+    expect(stack.empty?).to be(true)
   end
 
   it "Push null onto the Stack, call Top, and verify that the value returned is null." do
     stack.push(nil)
     expect(stack.top).to be(nil)
-    expect(stack.IsEmpty).to be(false)
+    expect(stack.empty?).to be(false)
   end
 
 end
