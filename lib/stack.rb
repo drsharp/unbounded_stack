@@ -11,10 +11,6 @@ class Stack
     @elements << element
   end
 
-  def Push(element)
-    @elements << element
-  end
-
   def Pop
     top = self.Top
     @elements = @elements[0..-2]
