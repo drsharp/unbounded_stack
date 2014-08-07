@@ -1,7 +1,7 @@
-require 'stack'
+require 'rubyversionofunboundedstackimpl'
 
-describe Stack do
-  subject(:stack) { Stack.new }
+describe 'RubyVersion_ofDotNet_UnboundedStackImpl' do
+  subject(:stack) { RubyVersion_ofDotNet_UnboundedStackImpl.new }
 
   specify "1. Create a Stack and verifies that IsEmpty is true." do
     expect(stack.empty?).to be(true)
