@@ -1,18 +1,16 @@
 
 class UnboundedStack
 
+  def initialize
+    self.list_of_stack_elements = Array.new
+  end
+
   def empty?
-    unless list_of_stack_elements != nil
-      self.list_of_stack_elements = Array.new
-    end
     list_of_stack_elements.empty?
   end
 
   def push a
     element_toPushOnTOstack = a
-    if list_of_stack_elements == nil
-      self.list_of_stack_elements = Array.new
-    end
     tmpArrayVar = list_of_stack_elements.dup()
     tmpArrayVar = tmpArrayVar[0..(list_of_stack_elements.length)] + [element_toPushOnTOstack]
     self.list_of_stack_elements = tmpArrayVar
