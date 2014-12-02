@@ -18,12 +18,9 @@ class UnboundedStack
   end
 
   def pop
-    unless empty? == false
-    then self.raise_error("Cannot Pop an empty Stack")
-    else
-      pop_the_Stack
-    end
+    raise_error("Cannot Pop an empty Stack") if empty?
 
+    pop_the_stack
   end
 
   def top
@@ -40,7 +37,7 @@ class UnboundedStack
     puts "Message raised: #{theMessageToRaise}"
   end
 
-  def pop_the_Stack
+  def pop_the_stack
     tmpStackVar = list_of_stack_elements.clone
     top_of_the_stack = nil
     while !tmpStackVar[0].nil?
