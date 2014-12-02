@@ -28,9 +28,9 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
 
   def top; raise "Cannot Top an empty Stack" if empty?; @listOfStackElements.last; end
 
-  def RaiseError(theMessageToRaise) raise theMessageToRaise || return; puts "Message raised: #{theMessageToRaise}"; end
-
   private
+
+  def RaiseError(theMessageToRaise) raise theMessageToRaise || return; puts "Message raised: #{theMessageToRaise}"; end
 
   def pop_the_Stack
     tmpStackVar = @listOfStackElements.clone
