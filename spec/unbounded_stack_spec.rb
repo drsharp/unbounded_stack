@@ -1,7 +1,7 @@
-require 'stack'
+require 'unbounded_stack'
 
-describe Stack do
-  subject(:stack) { Stack.new }
+describe 'UnboundedStack' do
+  subject(:stack) { UnboundedStack.new }
 
   specify "1. Create a Stack and verifies that IsEmpty is true." do
     expect(stack.empty?).to be(true)
