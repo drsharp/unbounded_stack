@@ -10,14 +10,14 @@ class UnboundedStack
   end
 
   def pop
-    if empty?
-      raise "Cannot Pop an empty Stack"
-    else
-      list_of_stack_elements.pop
-    end
+    raise "Cannot Pop an empty Stack" if empty?
+    list_of_stack_elements.pop
   end
 
-  def top; raise "Cannot Top an empty Stack" if empty?; @list_of_stack_elements.last; end
+  def top
+    raise "Cannot Top an empty Stack" if empty?
+    list_of_stack_elements.last
+  end
 
   private
 
