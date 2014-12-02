@@ -1,6 +1,5 @@
 
 class UnboundedStack
-
   def initialize
     self.list_of_stack_elements = Array.new
   end
@@ -29,7 +28,9 @@ class UnboundedStack
   attr_accessor :list_of_stack_elements
 
   def raise_error(theMessageToRaise)
-    raise theMessageToRaise || return
+    return unless theMessageToRaise
+
     puts "Message raised: #{theMessageToRaise}"
+    raise theMessageToRaise
   end
 end
