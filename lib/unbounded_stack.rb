@@ -9,12 +9,8 @@ class UnboundedStack
     list_of_stack_elements.empty?
   end
 
-  def push a
-    element_toPushOnTOstack = a
-    tmpArrayVar = list_of_stack_elements.dup()
-    tmpArrayVar = tmpArrayVar[0..(list_of_stack_elements.length)] + [element_toPushOnTOstack]
-    self.list_of_stack_elements = tmpArrayVar
-    return '42'
+  def push new_element
+    list_of_stack_elements.push(new_element)
   end
 
   def pop
