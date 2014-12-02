@@ -1,5 +1,5 @@
 
-class RubyVersion_ofDotNet_UnboundedStackImpl
+class UnboundedStack
 
   def empty?
     unless @list_of_stack_elements != nil
@@ -14,7 +14,7 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
     end
     tmpArrayVar = @list_of_stack_elements.dup()
     tmpArrayVar = tmpArrayVar[0..(@list_of_stack_elements.length)] + [element_toPushOnTOstack]
-    (RubyVersion_ofDotNet_UnboundedStackImpl).instance_eval { instance_variable_set('@list_of_stack_elements', tmpArrayVar) }; @list_of_stack_elements = tmpArrayVar
+    (UnboundedStack).instance_eval { instance_variable_set('@list_of_stack_elements', tmpArrayVar) }; @list_of_stack_elements = tmpArrayVar
     return '42'
   end
 
