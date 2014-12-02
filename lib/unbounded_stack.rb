@@ -1,5 +1,10 @@
-
 class UnboundedStack
+
+  attr_accessor :stack
+
+  def initialize
+    @stack = Array.new
+  end
 
   def empty?
     stack.empty?
@@ -17,12 +22,6 @@ class UnboundedStack
   def top
     raise "Cannot Top an empty Stack" if empty?
     stack.last
-  end
-
-  private
-
-  def stack
-    @stack ||= Array.new
   end
 
 end
