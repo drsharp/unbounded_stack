@@ -2,21 +2,20 @@
 class RubyVersion_ofDotNet_UnboundedStackImpl
 
   def empty?
-    unless @listOfStackElements != nil
-      @listOfStackElements = Array.new
+    unless list_of_stack_elements != nil
+      self.list_of_stack_elements = Array.new
     end
-    self.instance_variable_get('@listOfStackElements').empty?
+    list_of_stack_elements.empty?
   end
 
   def push a
     element_toPushOnTOstack = a
-    if @listOfStackElements == nil
-      @listOfStackElements = Array.new
+    if list_of_stack_elements == nil
+      self.list_of_stack_elements = Array.new
     end
-    tmpArrayVar = @listOfStackElements.dup()
-    tmpArrayVar = tmpArrayVar[0..(@listOfStackElements.length)] + [element_toPushOnTOstack]
-    (RubyVersion_ofDotNet_UnboundedStackImpl).instance_eval { instance_variable_set('@listOfStackElements', tmpArrayVar) }
-    @listOfStackElements = tmpArrayVar
+    tmpArrayVar = list_of_stack_elements.dup()
+    tmpArrayVar = tmpArrayVar[0..(list_of_stack_elements.length)] + [element_toPushOnTOstack]
+    self.list_of_stack_elements = tmpArrayVar
     return '42'
   end
 
@@ -31,10 +30,12 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
 
   def top
     raise "Cannot Top an empty Stack" if empty?
-    @listOfStackElements.last
+    list_of_stack_elements.last
   end
 
   private
+
+  attr_accessor :list_of_stack_elements
 
   def raise_error(theMessageToRaise)
     raise theMessageToRaise || return
@@ -42,7 +43,7 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
   end
 
   def pop_the_Stack
-    tmpStackVar = @listOfStackElements.clone
+    tmpStackVar = list_of_stack_elements.clone
     top_of_the_stack = nil
     while !tmpStackVar[0].nil?
       top_of_the_stack = tmpStackVar[0]
@@ -50,7 +51,7 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
         tmpStackVar[i] = tmpStackVar[i+1]
       end
     end
-    @listOfStackElements = lessOne(@listOfStackElements, top_of_the_stack)
+    self.list_of_stack_elements = lessOne(list_of_stack_elements, top_of_the_stack)
     return top_of_the_stack
   end
 
