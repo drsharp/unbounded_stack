@@ -9,17 +9,17 @@ class UnboundedStack
   end
 
   def push new_element
-    list_of_stack_elements.push(new_element)
+    list_of_stack_elements.push new_element
   end
 
   def pop
-    raise_error("Cannot Pop an empty Stack") if empty?
+    raise_error "Cannot Pop an empty Stack" if empty?
 
     list_of_stack_elements.pop
   end
 
   def top
-    raise "Cannot Top an empty Stack" if empty?
+    raise_error "Cannot Top an empty Stack" if empty?
     list_of_stack_elements.last
   end
 
