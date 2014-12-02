@@ -1,5 +1,5 @@
 
-class RubyVersion_ofDotNet_UnboundedStackImpl
+class UnboundedStack
 
   def empty?
     unless list_of_stack_elements != nil
