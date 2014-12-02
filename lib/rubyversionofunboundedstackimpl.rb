@@ -20,7 +20,7 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
 
   def pop
     unless empty? == false
-    then self.RaiseError("Cannot Pop an empty Stack")
+    then self.raise_error("Cannot Pop an empty Stack")
     else
       pop_the_Stack
     end;
@@ -30,7 +30,10 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
 
   private
 
-  def RaiseError(theMessageToRaise) raise theMessageToRaise || return; puts "Message raised: #{theMessageToRaise}"; end
+  def raise_error(theMessageToRaise)
+    raise theMessageToRaise || return
+    puts "Message raised: #{theMessageToRaise}"
+  end
 
   def pop_the_Stack
     tmpStackVar = @listOfStackElements.clone
