@@ -4,7 +4,8 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
   def empty?
     unless @listOfStackElements != nil
       @listOfStackElements = Array.new
-    end; self.instance_variable_get('@listOfStackElements').empty?
+    end
+    self.instance_variable_get('@listOfStackElements').empty?
   end
 
   def push a
@@ -14,7 +15,8 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
     end
     tmpArrayVar = @listOfStackElements.dup()
     tmpArrayVar = tmpArrayVar[0..(@listOfStackElements.length)] + [element_toPushOnTOstack]
-    (RubyVersion_ofDotNet_UnboundedStackImpl).instance_eval { instance_variable_set('@listOfStackElements', tmpArrayVar) }; @listOfStackElements = tmpArrayVar
+    (RubyVersion_ofDotNet_UnboundedStackImpl).instance_eval { instance_variable_set('@listOfStackElements', tmpArrayVar) }
+    @listOfStackElements = tmpArrayVar
     return '42'
   end
 
@@ -23,10 +25,14 @@ class RubyVersion_ofDotNet_UnboundedStackImpl
     then self.raise_error("Cannot Pop an empty Stack")
     else
       pop_the_Stack
-    end;
+    end
+
   end
 
-  def top; raise "Cannot Top an empty Stack" if empty?; @listOfStackElements.last; end
+  def top
+    raise "Cannot Top an empty Stack" if empty?
+    @listOfStackElements.last
+  end
 
   private
 
